@@ -47,11 +47,11 @@ public void draw ()
 }
 public boolean isWon()
 {
- for (int row = 0; row < NUM_ROWS; row ++)
+ for (int r = 0; r < NUM_ROWS; r ++)
     {
-        for (int col = 0; col < NUM_COLS; col++)
+        for (int c = 0; c < NUM_COLS; c++)
         {
-            if(!bombs.contains(buttons[row][col]) && buttons[row][col].isClicked() == false)
+            if(!bombs.contains(buttons[r][c]) && buttons[r][c].isClicked() == false)
             {
                 return false;
             }
@@ -61,7 +61,7 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
- String loser = "You lose!";
+ String loser = "You lost!";
     for(int c = 5; c<loser.length()+5;c++)
     {
     buttons[10][c].setLabel(loser.substring(c-5, c-4));
@@ -79,7 +79,7 @@ public void displayLosingMessage()
 }
 public void displayWinningMessage()
 {
-    String winner = "You win!";
+    String winner = "You won!";
     for(int c = 5; c<winner.length()+5;c++)
     {
     buttons[10][c].setLabel(winner.substring(c-5, c-4));
